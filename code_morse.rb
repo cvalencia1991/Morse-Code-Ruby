@@ -28,7 +28,7 @@ end
 # Add method decode Word
 
 def docode_word(word_code)
-  array = word_code.split(' ')
+  array = word_code.split
   text = ''
   array.each do |letter|
     text += decoder_char(letter)
