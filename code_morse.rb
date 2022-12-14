@@ -62,7 +62,7 @@ def docode_word(word_code)
   array.each do |letter|
     text += decoder_char(letter)
   end
-  print text
+  return text
 end
 
 
