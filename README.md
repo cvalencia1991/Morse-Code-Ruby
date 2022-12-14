@@ -64,7 +64,7 @@
 ## Image Code morse coding traduction
 
 
- <img src="international_Morse_Code.png" alt="morse_Code" width=auto  height="auto" />
+ <img src="Morse_Code.png" alt="morse_Code" width="auto"  height="auto" />
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
