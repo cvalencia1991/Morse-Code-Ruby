@@ -42,13 +42,30 @@ def decoder_char(code_morse)
 
   letteMorse.each do |key, value|
    if(value==code_morse)
-    print "#{key}".upcase
+    return "#{key}".upcase
     end
   end
 end
 
-print("type the code morse \n")
-code_morse = gets.chomp.to_s
+#testing decoder_char
+# decoder_char('-.-.') #C
+# decoder_char('.')    #E
+# decoder_char('...')  #S
+# decoder_char('.-')   #A
+# decoder_char('.-.')  #R
+
+#Add method decode Word
+
+def docode_word(word_code)
+  array = word_code.split(' ')
+  text = " "
+  array.each do |letter|
+    text += decoder_char(letter)
+  end
+  print text
+end
 
 
-decoder_char(code_morse)
+docode_word("-- -.--")
+
+#Finish Function Decode Word
