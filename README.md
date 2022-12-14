@@ -38,7 +38,7 @@
 
 # 📖 Clinic Database <a name="about-project"></a>
 
-> In this project We implement the morse code i
+> In this project We implement the morse code using the Ruby Language
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -64,7 +64,7 @@
 ## Image Code morse coding traduction
 
 
- <img src="Morse_Code.png" alt="morse_Code" width="auto"  height="auto" />
+ <img src="Morse_Code.png" alt="morse_Code" width="auto"  height="700" />
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
