@@ -61,10 +61,10 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Image Code morse coding traduction
+## Image of Morse code message
 
+![ruby](https://user-images.githubusercontent.com/85459676/207858418-1728b5b1-6de7-4171-88ec-0159f3eaa9d7.png)
 
- <img src="Morse_Code.png" alt="morse_Code" width="auto"  height="700" />
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
