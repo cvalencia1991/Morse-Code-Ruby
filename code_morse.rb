@@ -1,41 +1,34 @@
-def decoder_char(code_morse)
-  lette_morse = {
-    'a' => '.-', 'b' => '-...', 'c' => '-.-.',
-    'e' => '.', 'f' => '..-.', 'g' => '--.',
-    'h' => '....', 'i' => '..', 'j' => '.---',
-    'k' => '-.-', 'l' => '.-..', 'm' => '--',
-    'n' => '-.', 'o' => '---', 'p' => '.--.',
-    'q' => '--.-', 'r' => '.-.', 's' => '...',
-    't' => '-', 'u' => '..-', 'v' => '...-',
-    'w' => '.--', 'x' => '-..-', 'y' => '-.--',
-    'z' => '--..', '1' => '.---', '2' => '..---',
-    '3' => '...--', '4' => '....-', '5' => '.....',
-    '6' => '-....', '7' => '--...', '8' => '---..',
-    '9' => '----.', '0' => '-----'
+def decode_morse(morse_char)
+  morse_code = {
+    '.-' => 'A', '-...' => 'B', '-.-.' => 'C', '-..' => 'D', '.' => 'E',
+    '..-.' => 'F', '--.' => 'G', '....' => 'H', '..' => 'I', '.---' => 'J',
+    '-.-' => 'K', '.-..' => 'L', '--' => 'M', '-.' => 'N', '---' => 'O',
+    '.--.' => 'P', '--.-' => 'Q', '.-.' => 'R', '...' => 'S', '-' => 'T',
+    '..-' => 'U', '...-' => 'V', '.--' => 'W', '-..-' => 'X', '-.--' => 'Y',
+    '--..' => 'Z', '.----' => '1', '..---' => '2', '...--' => '3', '....-' => '4',
+    '.....' => '5', '-....' => '6', '--...' => '7', '---..' => '8', '----.' => '9',
+    '-----' => '0', '.-.-.-' => '.', '--..--' => ',', '..--..' => '?', '-.-.--' => '!',
+    '-..-.' => '/', '-.--.' => '(', '-.--.-' => ')', '.-...' => '&', '---...' => ':',
+    '-.-.-.' => ';', '-...-' => '=', '.-.-.' => '+', '-....-' => '-', '..--.-' => '_',
+    '.-..-.' => '"', '...-..-' => '$', '.--.-.' => '@', ' ' => ' '
   }
-  lette_morse.each do |key, value|
-    return key.to_s.upcase if value == code_morse
-  end
+  morse_code[morse_char]
 end
 
-# testing decoder_char
-# decoder_char('-.-.') #C
-# decoder_char('.')    #E
-# decoder_char('...')  #S
-# decoder_char('.-')   #A
-# decoder_char('.-.')  #R
-
-# Add method decode Word
-
-def docode_word(word_code)
-  array = word_code.split
-  text = ''
-  array.each do |letter|
-    text += decoder_char(letter)
-  end
-  text
+# method to decode an entire word in Morse code
+def decode_word(morse_word)
+  word = ' '
+  morse_word.split(word).map { |char| decode_morse(char) }.join
 end
 
-# docode_word("-- -.--") #MY
+# method to decode the entire message in Morse code
+def decode_message(morse_message)
+  morse_message.split('   ').map { |word| decode_word(word) }.join(' ')
+end
 
-# Finish Function Decode Word
+puts decode_word('.... . .-.. .-.. ---') # HELLO
+# CESAR AND KELVIN DID THIS PROJECT
+puts decode_message('-.-. . ... .- .-.    .- -. -..    -.- . .-.. ...- .. -.    -.. .. -..    - .... .. ...
+.--. .-. --- .--- . -.-. -')
+# A BOX FULL OF RUBIES!
+puts decode_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ... -.-.--')
